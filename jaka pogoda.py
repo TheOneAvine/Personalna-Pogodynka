@@ -3,6 +3,7 @@
 #przywitanie w aplikacji
 
 #linia testowa ok
+#dodatkowy testok
 
 #zdefiniowanie funkcji, która przedstawi informacje, o które może zapytać użytkownik
 #pogoda na dziś, pogoda na najbliższy tydzień, kiedy najbliższy deszcz, pogoda na dany dzień
