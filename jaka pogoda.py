@@ -2,6 +2,8 @@
 
 #przywitanie w aplikacji
 
+#linia testowa ok
+
 #zdefiniowanie funkcji, która przedstawi informacje, o które może zapytać użytkownik
 #pogoda na dziś, pogoda na najbliższy tydzień, kiedy najbliższy deszcz, pogoda na dany dzień
 #informacje, które program musi przedstawić: temperatura w ciągu dnia i nocy,
