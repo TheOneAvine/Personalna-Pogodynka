@@ -1,13 +1,25 @@
 #potrzebne rzeczy
 import requests
+import json
 
 #link do pogody
-link = "https://api.openweathermap.org/data/2.5/weather?q={}&appid=9bf42cfd7b0efdc08e1d18087d83f5fe"
+link_dzisiaj = "https://api.openweathermap.org/data/2.5/weather?q={}&appid=9bf42cfd7b0efdc08e1d18087d83f5fe"
 
 #zdefiniowanie funkcji, która przedstawi informacje, o które może zapytać użytkownik
-#pogoda na dziś, pogoda na najbliższy tydzień, XD (to lepiej ograniczyć, bo umre)
+#pogoda na dziś, na jutro i na tydzień
 
-#ogarnięcie dostępu do danych pogodowych (czy w tym miejscu? wyjdzie w praniu)
+#pogoda na dzisiaj
+def dzisiaj():
+    
+    pass
+
+def jutro():
+    #pogoda na jutro
+    pass
+
+def tydzien():
+    #pogoda na najbliższe 2 tygodnie
+    pass
 
 #przywitanie w aplikacji
 print("Witaj w Personalnej Pogodynce. Możesz tutaj sprawdzić aktualną pogodę i prognozę na najbliższe dni.")
@@ -15,8 +27,10 @@ print("Witaj w Personalnej Pogodynce. Możesz tutaj sprawdzić aktualną pogodę
 while True:
     #dla jakiego miasta będzie sprawdzana pogoda
     lokalizacja = input("Podaj nazwę miasta, w którym chcesz sprawdzić pogodę: ")
-    x = link.format(lokalizacja)
- 
+    x = link_dzisiaj.format(lokalizacja)
+    pogoda_dzisiaj = json.loads(x)
+    
+    print(pogoda_dzisiaj)
 #wywołanie funkcji dotyczącej poszukiwanego info
 
 #input użytkownika + czy zamknąć program
