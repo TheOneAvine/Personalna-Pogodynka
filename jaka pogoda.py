@@ -28,7 +28,8 @@ while True:
     #dla jakiego miasta będzie sprawdzana pogoda
     lokalizacja = input("Podaj nazwę miasta, w którym chcesz sprawdzić pogodę: ")
     x = link_dzisiaj.format(lokalizacja)
-    pogoda_dzisiaj = json.loads(x)
+    r = requests.get(x)
+    pogoda_dzisiaj = r.json()
     
     print(pogoda_dzisiaj)
 #wywołanie funkcji dotyczącej poszukiwanego info
@@ -36,3 +37,4 @@ while True:
 #input użytkownika + czy zamknąć program
     czy_wyjść = input("Czy zakończyć działanie programu? t/n ")
     if czy_wyjść == "t": break
+
