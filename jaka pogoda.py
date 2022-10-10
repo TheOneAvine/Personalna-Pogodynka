@@ -1,13 +1,11 @@
-#potrzebne rzeczy
 import requests
 
-#link do pogody
+#linki do pogody
 link_dzisiaj = "https://api.openweathermap.org/data/2.5/weather?q={}&appid=9bf42cfd7b0efdc08e1d18087d83f5fe&lang=pl"
+link_5dni = "api.openweathermap.org/data/2.5/forecast?q={}&appid=9bf42cfd7b0efdc08e1d18087d83f5fe&lang=pl"
 
-#zdefiniowanie funkcji, która przedstawi informacje, o które może zapytać użytkownik
-#pogoda na dziś, na jutro i na tydzień
 
-#pogoda na dzisiaj
+#fuknkcje drukujące pożądane info
 def dzisiaj():
     temp = pogoda_dzisiaj["main"]["temp_max"] - 273.15
     print("W tym momencie w miejscowości", lokalizacja, "panuje temperatura:", temp, "stopni.")
@@ -15,6 +13,12 @@ def dzisiaj():
     print("Temperatura odczuwalna wynosi", temp_odczuwalna, "stopni.")
     warunki = pogoda_dzisiaj["weather"][0]["description"]
     print("Na dworze jest", warunki +".")
+    ciśnienie = pogoda_dzisiaj["main"]["pressure"]
+    print("Ciśnienie wynosi", ciśnienie, "hPa.")
+    wilgotność = pogoda_dzisiaj["main"]["humidity"]
+    print("Wilgotność jest na poziomie", wilgotność + "%")
+    wiatr = pogoda_dzisiaj["wind"]["speed"]
+    print("Wiatr ma prędkość", wiatr + "m/s.")
     
     
 def jutro():
