@@ -16,9 +16,9 @@ dane_do_linków = {"q" : lokalizacja, "appid" : "9bf42cfd7b0efdc08e1d18087d83f5f
 
 # fuknkcje drukujące pożądane info
 def teraz():
-    temp = pogoda_dzisiaj["main"]["temp_max"] - K_TO_C
+    temp = float(pogoda_dzisiaj["main"]["temp_max"]) - K_TO_C
     print("W tym momencie w miejscowości", lokalizacja, "panuje temperatura:", int(temp), "stopni.")
-    temp_odczuwalna = pogoda_dzisiaj["main"]["feels_like"] - K_TO_C
+    temp_odczuwalna = float(pogoda_dzisiaj["main"]["feels_like"]) - K_TO_C
     print("Temperatura odczuwalna wynosi", int(temp_odczuwalna), "stopni.")
     warunki = pogoda_dzisiaj["weather"][0]["description"]
     print("Na dworze jest", warunki + ".")
@@ -39,10 +39,7 @@ def tydzien():
 
 
 # składamy link do kupy
-x = requests.get(url_baza, params=dane_do_linków)
-
-# pobieramy dane
-pogoda_dzisiaj = requests.get(x).json()
+pogoda_dzisiaj = requests.get(url_baza, params=dane_do_linków).json()
 
 # prezentujemy dane   
 teraz()
