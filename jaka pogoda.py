@@ -39,7 +39,7 @@ def tydzien():
 
 
 # składamy link do kupy
-r = requests.get(url_baza, params=dane_do_linków)
+x = requests.get(url_baza, params=dane_do_linków)
 
 # pobieramy dane
 pogoda_dzisiaj = requests.get(x).json()
