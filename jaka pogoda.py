@@ -12,7 +12,7 @@ lokalizacja = input("Podaj nazwę miasta, w którym chcesz sprawdzić pogodę: "
 # link do pogody
 # link_dzisiaj = "https://api.openweathermap.org/data/2.5/weather?q={lokalizacja}&appid=9bf42cfd7b0efdc08e1d18087d83f5fe&lang=pl"
 url_baza = "https://api.openweathermap.org/data/2.5/weather"
-dane_do_linków = {"q" : lokalizacja, "appid" : "9bf42cfd7b0efdc08e1d18087d83f5fe", "lang" : "pl"}
+dane_do_linków = {"q": lokalizacja, "appid": "9bf42cfd7b0efdc08e1d18087d83f5fe", "lang": "pl"}
 
 # fuknkcje drukujące pożądane info
 def teraz():
@@ -38,10 +38,8 @@ def tydzien():
     pass
 
 
-# składamy link do kupy
+# składamy link do kupy, pobieramy dane
 pogoda_dzisiaj = requests.get(url_baza, params=dane_do_linków).json()
 
 # prezentujemy dane   
 teraz()
-
-
